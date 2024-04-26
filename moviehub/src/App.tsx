@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.scss';
-import MovieList from './components/MovieList/MovieList';
+import MovieListTop10 from './components/MovieListTop10/MovieListTop10';
 import Navigation from './components/Navigation/Navigation';
+import Header from './components/Header/Header'
 
 function App() {
   return (
     <>
-    <MovieList></MovieList>
+    <Header></Header>
+    <MovieListTop10></MovieListTop10>
     <Navigation></Navigation>
     </>
   );

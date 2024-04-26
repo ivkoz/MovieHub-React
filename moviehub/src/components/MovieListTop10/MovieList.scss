@@ -1,0 +1,44 @@
+.movie-block {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.row-column-films{
+  border-radius: 20px 20px 0px 0px;
+}
+
+.main-container{
+  background-color: #fff;
+  .container{
+    .row-column-films{
+      .movie-block{
+        position: relative;
+        .block-rating{
+          background-color: green;
+          color: #fff;
+          border-radius: 100px;
+          position: absolute;
+          padding: 10px;
+          top: 0;
+          left: 10px;
+          p{
+            margin: 0;
+          }
+        }
+      }
+    }
+    .movie-block{
+      width: 100%;
+      max-width: 250px;
+      height: 300px;
+      h2{
+        font-size: 18px;
+      }
+      img{
+        width: 130px;
+        height: 180px;
+        border-radius: 10px;
+      }
+    }
+  }
+}

@@ -6,4 +6,19 @@ body {
   img{
     width: 100%;
   }
+  #root{
+    background-color: #000;
+  }
+}
+
+.container{
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.react-player__preview{
+  border-radius: 35px;
+}
+.rating-above-6{
+  background-color: green !important;
 }
