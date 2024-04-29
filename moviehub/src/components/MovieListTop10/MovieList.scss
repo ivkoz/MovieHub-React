@@ -10,6 +10,9 @@
 .main-container{
   background-color: #fff;
   .container{
+    h1{
+      margin-top: 0;
+    }
     .row-column-films{
       .movie-block{
         position: relative;
@@ -30,7 +33,7 @@
     .movie-block{
       width: 100%;
       max-width: 250px;
-      height: 300px;
+      height: 260px;
       h2{
         font-size: 18px;
       }
