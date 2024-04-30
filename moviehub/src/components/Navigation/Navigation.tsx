@@ -4,15 +4,17 @@ import IconFilms from '../../img/icons/Navigation/icon-movie.svg';
 import IconSearch from '../../img/icons/Navigation/icon-search.svg';
 import IconSerials from '../../img/icons/Navigation/icon-serials.svg';
 import IconProfile from '../../img/icons/Navigation/icon-profile.svg';
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import HomePage from '../HomePage/HomePage';
 
 function Navigation() {
   return (
     <>
     <div className="navigation-bar">
         <div className="navigation-bar_item">
-          <a href="">
-            <img src={IconHome} alt="" />
-          </a>
+          <Link to={'/'}>
+          <img src={IconHome} alt="" />
+          </Link>
         </div>
         <div className="navigation-bar_item">
           <a href="">

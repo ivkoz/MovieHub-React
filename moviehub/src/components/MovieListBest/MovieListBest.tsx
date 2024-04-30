@@ -14,6 +14,7 @@ export interface Movie {
   rating: {
     kp: number;
   };
+  year:number;
   description: string;
 }
 
@@ -29,8 +30,8 @@ const instance: AxiosInstance = axios.create({
   },
 });
 
-export const getMovies = async (page: number, limit: number, id: number): Promise<MoviesResponse> => {
-  const response = await instance.get<MoviesResponse>(`movie?page=${page}&limit=${limit}&id=1047883&id=326&id=258687`);
+export const getMovies = async (page?: number, limit?: number, id?: number, rating?:number,year?:number): Promise<MoviesResponse> => {
+  const response = await instance.get<MoviesResponse>(`movie?page=${page}&limit=${limit}&id=1047883&id=326&id=258687&`);
   return response.data;
 };
 
@@ -40,7 +41,7 @@ const MovieListBest: React.FC = () => {
     useEffect(() => {
       const fetchMovies = async () => {
         try {
-          const moviesData: MoviesResponse = await getMovies(1, 4, 6.7);
+          const moviesData: MoviesResponse = await getMovies(1, 4, 6.7, 7,2000);
           setMovies(moviesData);
         } catch (error) {
           console.error("Error fetching movies:", error);

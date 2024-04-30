@@ -4,13 +4,14 @@ import './MovieList.scss';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
 const MovieListTop10: React.FC = () => {
   const [movies, setMovies] = useState<MoviesResponse | null>(null);
 
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const moviesData: MoviesResponse = await getMovies(1, 4, 6.7);
+        const moviesData: MoviesResponse = await getMovies(1, 4, 2, 6.7, 2000);
         setMovies(moviesData);
       } catch (error) {
         console.error("Error fetching movies:", error);
@@ -35,6 +36,7 @@ const MovieListTop10: React.FC = () => {
       <Slider {...settings}>
         {movies?.docs.map((movie) => (
           <div key={movie.id} className="movie-block">
+            <Link to={`/movies/${movie.id}`}>
             <img src={movie.poster.previewUrl} alt={movie.name} />
             <h2>{movie.name}</h2>
             {/* <p>{movie.description}</p> */}
@@ -42,6 +44,7 @@ const MovieListTop10: React.FC = () => {
             <div className={`block-rating ${movie.rating.kp > 6 ? 'rating-above-6' : movie.rating.kp > 5 ? 'rating-above-5' : ''}`}>
               <p>{movie.rating.kp}</p>
           </div>
+          </Link>
           </div>
         ))}
         </Slider>

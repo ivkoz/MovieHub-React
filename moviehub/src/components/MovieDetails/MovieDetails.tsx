@@ -1,6 +1,8 @@
 import axios, { AxiosInstance } from "axios";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import './MovieDetails.scss'
+
 
 const instance: AxiosInstance = axios.create({
   baseURL: "https://api.kinopoisk.dev/v1.4",
@@ -17,6 +19,10 @@ interface Movie {
     url: string;
   };
   description: string;
+  rating:{
+    kp:number;
+  };
+  year:number;
   // Добавьте другие свойства фильма, которые вам нужны
 }
 
@@ -32,7 +38,7 @@ const MovieDetails: React.FC<MovieDetailsProps> = () => {
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
-      try {
+      try { 
         const response = await instance.get(`/movie/${id}`);
         setMovie(response.data);
       } catch (error) {
@@ -51,10 +57,14 @@ const MovieDetails: React.FC<MovieDetailsProps> = () => {
 
   return (
     <div>
-      <h1>{movie.name}</h1>
-      <img src={movie.poster.url} alt={movie.name} />
-      <p>{movie.description}</p>
-      {/* Добавьте другие детали о фильме, которые вы хотите отобразить */}
+      <div className="background-img"><img src={movie.poster.url} alt={movie.name} /></div>
+      <div className="text-content">
+        <img src={movie.poster.url} alt={movie.name} className="img-poster"/>
+        <h1>{movie.name}</h1>
+        <h2>{movie.rating.kp}</h2>
+        <h2>{movie.year}</h2>
+        <p>{movie.description}</p>
+      </div>
     </div>
   );
 };

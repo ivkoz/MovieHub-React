@@ -24,7 +24,7 @@ const instance: AxiosInstance = axios.create({
   },
 });
 
-export const getMovies = async (page: number, limit: number, ratingKp: number): Promise<MoviesResponse> => {
-  const response = await instance.get<MoviesResponse>(`movie?page=${page}&limit=${limit}&rating.kp=${ratingKp}`);
+export const getMovies = async (page: number, limit: number, id:number, ratingKp: number, year:number): Promise<MoviesResponse> => {
+  const response = await instance.get<MoviesResponse>(`movie?page=${page}&limit=${limit}&rating.kp=${ratingKp}&year=${year}`);
   return response.data;
 };
