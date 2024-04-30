@@ -6,6 +6,7 @@ import IconSerials from '../../img/icons/Navigation/icon-serials.svg';
 import IconProfile from '../../img/icons/Navigation/icon-profile.svg';
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import HomePage from '../HomePage/HomePage';
+import MovieSearch from '../MovieSearch/MovieSearch'
 
 function Navigation() {
   return (
@@ -27,9 +28,11 @@ function Navigation() {
           </a>
         </div>
         <div className="navigation-bar_item">
-          <a href="">
+      
+            <Link to={'/movie/search'}>
             <img src={IconSearch} alt="" />
-          </a>
+            </Link>
+          
         </div>
         <div className="navigation-bar_item">
           <a href="">
