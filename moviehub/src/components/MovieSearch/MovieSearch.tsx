@@ -46,19 +46,19 @@ const MovieSearch: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className='searchContainer'>
       <input
         type="text"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-        placeholder="Search for a movie..."
+        placeholder="Поиск по фильмам и сериалам"
       />
       <ul>
         {movies.map((movie) => (
           <li key={movie.id}>
-            <Link to={`/movie/${movie.id}`}>
-            <img src={(movie.poster as any).url} alt={movie.name} />
-            <h2>{movie.name}</h2> <h2>({movie.year})</h2>
+            <Link to={`/movies/${movie.id}`}>
+              <img src={(movie.poster as any).url} alt={movie.name} />
+              {movie.name} ({movie.year})
             </Link>
           </li>
         ))}

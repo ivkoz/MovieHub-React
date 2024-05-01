@@ -7,7 +7,7 @@ import MovieListBest from './components/MovieListBest/MovieListBest';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import MovieDetails from './components/MovieDetails/MovieDetails';
 import HomePage from './components/HomePage/HomePage';
-import MovieSearchPage from './components/MovieSearch/MovieSearch'
+import MovieSearch from './components/MovieSearch/MovieSearch'
 
 function App() {
   return (
@@ -16,8 +16,8 @@ function App() {
       <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/movies/:id" element={<MovieDetails />} />
-          <Route path="/movies/:id" element={<MovieListTop10 />} />
-          <Route path="/movie/search" element={<MovieSearchPage />} />
+          <Route path="/top-10" element={<MovieListTop10 />} />
+          <Route path="/movie/search" element={<MovieSearch />} />
         </Routes>
         <Navigation></Navigation>
     </Router>

@@ -1,6 +1,20 @@
+#root{
+    .searchContainer{
+        background-color: #fff;
+        padding: 10px;
+        input{
+            width: 100%;
+            max-width: 310px;
+            border-radius: 30px;
+            border: 1px solid rgb(222, 222, 222);
+            padding: 10px 20px;
+        }
+    }
+}
+
 li{
-    color: #fff;
+    color: #000;
     h2{
-        color: #fff;
+        color: #000;
     }
 }
