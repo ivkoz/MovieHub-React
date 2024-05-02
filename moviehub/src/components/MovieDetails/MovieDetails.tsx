@@ -1,8 +1,9 @@
 import axios, { AxiosInstance } from "axios";
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link, useParams } from "react-router-dom";
 import './MovieDetails.scss'
-
+import IconStar from '../../img/icons/star.png';
+import { parse } from "url";
 
 const instance: AxiosInstance = axios.create({
   baseURL: "https://api.kinopoisk.dev/v1.4",
@@ -23,7 +24,6 @@ interface Movie {
     kp:number;
   };
   year:number;
-  // Добавьте другие свойства фильма, которые вам нужны
 }
 
 interface MovieDetailsParams extends Record<string, string | undefined> {
@@ -61,8 +61,13 @@ const MovieDetails: React.FC<MovieDetailsProps> = () => {
       <div className="text-content">
         <img src={movie.poster.url} alt={movie.name} className="img-poster"/>
         <h1>{movie.name}</h1>
-        <h2>{movie.rating.kp}</h2>
-        <h2>{movie.year}</h2>
+        <div className="movie-details">
+          <div className="block-rating">
+            <img src={IconStar} alt="" className="icon-star"/>
+            <h2 className="h2-rating">{parseFloat(movie.rating.kp.toFixed(1))}</h2>
+          </div>
+          <h2>Год: {movie.year}</h2>
+        </div>
         <p>{movie.description}</p>
       </div>
     </div>

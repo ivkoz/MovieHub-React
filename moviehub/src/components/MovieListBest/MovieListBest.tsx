@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link, useParams } from "react-router-dom";
 
 export interface Movie {
   id: number;
@@ -14,7 +14,7 @@ export interface Movie {
   rating: {
     kp: number;
   };
-  year:number;
+  year: number;
   description: string;
 }
 
@@ -36,52 +36,54 @@ export const getMovies = async (page?: number, limit?: number, id?: number, rati
 };
 
 const MovieListBest: React.FC = () => {
-    const [movies, setMovies] = useState<MoviesResponse | null>(null);
-  
-    useEffect(() => {
-      const fetchMovies = async () => {
-        try {
-          const moviesData: MoviesResponse = await getMovies(1, 4, 6.7, 7,2000);
-          setMovies(moviesData);
-        } catch (error) {
-          console.error("Error fetching movies:", error);
-        }
-      };
-  
-      fetchMovies();
-    }, []);
-  
-  
-    const settings = {
-      className: "slider variable-width",
-      infinite: false,
-      slidesToShow: 2,
-      slidesToScroll: 1
+  const [movies, setMovies] = useState<MoviesResponse | null>(null);
+  const [favoriteMovies, setFavoriteMovies] = useState<number[]>([]);
+
+  useEffect(() => {
+    const fetchMovies = async () => {
+      try {
+        const moviesData: MoviesResponse = await getMovies(1, 4, 6.7, 7,);
+        setMovies(moviesData);
+      } catch (error) {
+        console.error("Error fetching movies:", error);
+      }
     };
-    return (
-      <div className="main-container">
-        <div className="container">
+
+    fetchMovies();
+  }, []);
+
+  
+
+  const settings = {
+    className: "slider variable-width",
+    infinite: false,
+    slidesToShow: 2,
+    slidesToScroll: 1
+  };
+
+  return (
+    <div className="main-container">
+      <div className="container">
         <h1>Лучшее</h1>
         <div className="row-column-films">
-        <Slider {...settings}>
-          {movies?.docs.map((movie) => (
-            <div key={movie.id} className="movie-block">
+          <Slider {...settings}>
+            {movies?.docs.map((movie) => (
+              <div key={movie.id} className="movie-block">
                 <Link to={`/movies/${movie.id}`}>
-                    <img src={movie.poster.previewUrl} alt={movie.name} />
-                    <h2>{movie.name}</h2>
-                    {/* <p>{movie.description}</p> */}
-                    <div className={`block-rating ${movie.rating.kp > 6 ? 'rating-above-6' : movie.rating.kp > 5 ? 'rating-above-5' : ''}`}>
+                  <img src={movie.poster.previewUrl} alt={movie.name} />
+                  <h2>{movie.name}</h2>
+                  {/* <p>{movie.description}</p> */}
+                  <div className={`block-rating ${movie.rating.kp > 6 ? 'rating-above-6' : movie.rating.kp > 5 ? 'rating-above-5' : ''}`}>
                     <p>{movie.rating.kp}</p>
-            </div>
-            </Link>
-            </div>
-          ))}
+                  </div>
+                </Link>
+              </div>
+            ))}
           </Slider>
+        </div>
       </div>
-      </div>
-      </div>
-    );
-  };
-  
-  export default MovieListBest;
-  
+    </div>
+  );
+};
+
+export default MovieListBest;

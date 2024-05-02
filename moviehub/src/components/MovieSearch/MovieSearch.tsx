@@ -16,7 +16,6 @@ interface Movie {
   name: string;
   poster: object;
   year: number;
-  // Добавьте другие необходимые свойства
 }
 
 const MovieSearch: React.FC = () => {
@@ -24,7 +23,7 @@ const MovieSearch: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
 
   useEffect(() => {
-    if (searchQuery.length > 2) { // Минимальная длина для поиска
+    if (searchQuery.length > 2) { 
       searchMovies(searchQuery);
     }
   }, [searchQuery]);
@@ -58,7 +57,7 @@ const MovieSearch: React.FC = () => {
           <li key={movie.id}>
             <Link to={`/movies/${movie.id}`}>
               <img src={(movie.poster as any).url} alt={movie.name} />
-              {movie.name} ({movie.year})
+              <h2>{movie.name}</h2> <h2>({movie.year})</h2>
             </Link>
           </li>
         ))}

@@ -21,6 +21,28 @@
     border-radius: 15px 15px 0px 0px;
     padding-left: 20px;
     padding-right: 20px;
+    .movie-details{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        h2{
+            margin-top: 0;
+        }
+        .block-rating{
+            position: relative;
+            .icon-star{
+                width: 80px;
+                height: 80px;
+            }
+            .h2-rating{
+                position: absolute;
+                left: 35%;
+                top: 35%;
+                color: #fff;
+                font-size: 18px;
+            }
+        }
+    }
     .img-poster{
         top: -200px;
         left: 0;

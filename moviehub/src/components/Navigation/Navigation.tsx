@@ -17,7 +17,7 @@ function Navigation() {
           <img src={IconHome} alt="" />
           </Link>
         </div>
-        <div className="navigation-bar_item">
+        {/* <div className="navigation-bar_item">
           <a href="">
             <img src={IconFilms} alt="" />
           </a>
@@ -26,7 +26,7 @@ function Navigation() {
           <a href="">
             <img src={IconSerials} alt="" />
           </a>
-        </div>
+        </div> */}
         <div className="navigation-bar_item">
       
             <Link to={'/movie/search'}>

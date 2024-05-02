@@ -9,6 +9,22 @@
             border: 1px solid rgb(222, 222, 222);
             padding: 10px 20px;
         }
+        li{
+            
+            a{
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+                font-weight: bold;
+            }
+            h2{
+                font-size: 18px;
+                margin-left: 10px;
+            }
+            img{
+                width: 50px;
+            }
+        }
     }
 }
 

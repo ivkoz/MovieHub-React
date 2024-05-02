@@ -18,6 +18,7 @@ function App() {
           <Route path="/movies/:id" element={<MovieDetails />} />
           <Route path="/top-10" element={<MovieListTop10 />} />
           <Route path="/movie/search" element={<MovieSearch />} />
+          <Route path="/profile" element={<MovieSearch />} />
         </Routes>
         <Navigation></Navigation>
     </Router>
