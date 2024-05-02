@@ -1,0 +1,48 @@
+.genres-page{
+    background-color: #fff;
+    color: #000;
+    padding: 10px;
+    height: 100%;
+    .genres-buttons{
+        
+        width: 100%;
+        ul{
+            flex-wrap: wrap;
+            display: flex;
+            li{
+                display: flex;
+                button{
+                    border-radius: 30px;
+                    padding: 5px 20px;
+                    background-color: #fff;
+                    border: 1px solid #dadada;
+                    margin-right: 10px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+    .genres-film-block{
+        .movie-text{
+            display: flex;
+            flex-direction: column;
+        }
+        ul{
+            padding: 0; 
+            li{
+                a{
+                    display: flex;
+                    margin-bottom: 20px;
+                    h2{
+                        font-size: 18px;
+                        margin-left: 20px;
+                        margin-right: 10px;
+                    }
+                }
+                img{
+                    width: 100px;
+                }
+            }
+        }
+    }
+}

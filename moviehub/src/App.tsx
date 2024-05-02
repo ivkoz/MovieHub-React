@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import MovieDetails from './components/MovieDetails/MovieDetails';
 import HomePage from './components/HomePage/HomePage';
 import MovieSearch from './components/MovieSearch/MovieSearch'
+import GenresPage from './components/Genres/GenresPage';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
           <Route path="/top-10" element={<MovieListTop10 />} />
           <Route path="/movie/search" element={<MovieSearch />} />
           <Route path="/profile" element={<MovieSearch />} />
+          <Route path="/genres" element={<GenresPage />} />
+          <Route path="/genre/:genre" element={<GenresPage />} />
         </Routes>
         <Navigation></Navigation>
     </Router>

@@ -17,12 +17,12 @@ function Navigation() {
           <img src={IconHome} alt="" />
           </Link>
         </div>
-        {/* <div className="navigation-bar_item">
-          <a href="">
-            <img src={IconFilms} alt="" />
-          </a>
-        </div>
         <div className="navigation-bar_item">
+        <Link to={'/genres'}>
+            <img src={IconFilms} alt="" />
+          </Link>
+        </div>
+        {/* <div className="navigation-bar_item">
           <a href="">
             <img src={IconSerials} alt="" />
           </a>

@@ -38,7 +38,7 @@ const MovieDetails: React.FC<MovieDetailsProps> = () => {
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
-      try { 
+      try {
         const response = await instance.get(`/movie/${id}`);
         setMovie(response.data);
       } catch (error) {
