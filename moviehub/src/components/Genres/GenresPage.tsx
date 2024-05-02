@@ -83,18 +83,8 @@ interface RouteParams extends Record<string, string | undefined> {
             </Link>
           </li>
           <li>
-            <Link to="/genre/боевик">
-              <button>Боевик</button>
-            </Link>
-          </li>
-          <li>
-            <Link to="/genre/боевик">
-              <button>Боевик</button>
-            </Link>
-          </li>
-          <li>
-            <Link to="/genre/боевик">
-              <button>Боевик</button>
+            <Link to="/genre/мультфильмы">
+              <button>Мультфильмы</button>
             </Link>
           </li>
         </ul>

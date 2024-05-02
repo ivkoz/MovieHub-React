@@ -37,7 +37,7 @@ export const getMovies = async (page?: number, limit?: number, id?: number, rati
 
 const MovieListBest: React.FC = () => {
   const [movies, setMovies] = useState<MoviesResponse | null>(null);
-  const [favoriteMovies, setFavoriteMovies] = useState<number[]>([]);
+  // const [favoriteMovies, setFavoriteMovies] = useState<number[]>([]);
 
   useEffect(() => {
     const fetchMovies = async () => {
