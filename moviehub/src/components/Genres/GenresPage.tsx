@@ -16,7 +16,7 @@ interface RouteParams extends Record<string, string | undefined> {
     genre?: string;
   }
 
-  const GenresPage: React.FC = () => {
+  const GenresPage = () => {
     const [movies, setMovies] = useState<Movie[]>([]);
   
     const { genre } = useParams<RouteParams>();

@@ -32,7 +32,7 @@ interface MovieDetailsParams extends Record<string, string | undefined> {
 
 interface MovieDetailsProps {}
 
-const MovieDetails: React.FC<MovieDetailsProps> = () => {
+const MovieDetails = () => {
   const { id } = useParams<MovieDetailsParams>();
   const [movie, setMovie] = useState<Movie | null>(null);
 

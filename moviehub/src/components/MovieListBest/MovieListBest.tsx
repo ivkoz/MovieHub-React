@@ -35,7 +35,7 @@ export const getMovies = async (page?: number, limit?: number, id?: number, rati
   return response.data;
 };
 
-const MovieListBest: React.FC = () => {
+const MovieListBest = () => {
   const [movies, setMovies] = useState<MoviesResponse | null>(null);
   // const [favoriteMovies, setFavoriteMovies] = useState<number[]>([]);
 
